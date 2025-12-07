@@ -20,11 +20,11 @@ func main() {
 			os.Exit(1)
 		}
 		bytes_read, err := io.Copy(os.Stdout, resp.Body)
+		resp.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
 			os.Exit(1)
 		}
-		resp.Body.Close()
 		fmt.Printf("bytes: read: %d\n", bytes_read)
 	}
 }
