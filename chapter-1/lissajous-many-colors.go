@@ -12,14 +12,14 @@ import (
 
 var palette = []color.Color{
 	color.Black,
-	color.RGBA{R: 1*32-1, A: 255},
-	color.RGBA{R: 2*32-1, A: 255},
-	color.RGBA{R: 3*32-1, A: 255},
-	color.RGBA{R: 4*32-1, A: 255},
-	color.RGBA{R: 5*32-1, A: 255},
-	color.RGBA{R: 6*32-1, A: 255},
-	color.RGBA{R: 7*32-1, A: 255},
-	color.RGBA{R: 8*32-1, A: 255},
+	color.RGBA{R: 1*32 - 1, A: 255},
+	color.RGBA{R: 2*32 - 1, A: 255},
+	color.RGBA{R: 3*32 - 1, A: 255},
+	color.RGBA{R: 4*32 - 1, A: 255},
+	color.RGBA{R: 5*32 - 1, A: 255},
+	color.RGBA{R: 6*32 - 1, A: 255},
+	color.RGBA{R: 7*32 - 1, A: 255},
+	color.RGBA{R: 8*32 - 1, A: 255},
 }
 
 func main() {
@@ -45,9 +45,9 @@ func lissajous(out io.Writer) {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			dist := math.Sqrt(x*x + y*y)
-			col_idx := uint8(dist * 8);
+			col_idx := uint8(dist * 8)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5),
-			col_idx)
+				col_idx)
 
 		}
 		phase += 0.1
